@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get 'incomes', to: 'home#incomes'
   get 'calendar_view', to: 'home#calendar'
   resources :categories
+  resources :transactions
 end

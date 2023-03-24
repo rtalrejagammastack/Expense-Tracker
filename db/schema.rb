@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_22_115608) do
+ActiveRecord::Schema.define(version: 2023_03_24_050258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,10 +58,12 @@ ActiveRecord::Schema.define(version: 2023_03_22_115608) do
     t.bigint "status_id", null: false
     t.bigint "type_id", null: false
     t.bigint "mode_id", null: false
-    t.bigint "receiver_id", null: false
-    t.bigint "payer_id", null: false
+    t.bigint "receiver_id"
+    t.bigint "payer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "payer_name"
+    t.string "receiver_name"
     t.index ["expense_category_id"], name: "index_transactions_on_expense_category_id"
     t.index ["mode_id"], name: "index_transactions_on_mode_id"
     t.index ["payer_id"], name: "index_transactions_on_payer_id"
