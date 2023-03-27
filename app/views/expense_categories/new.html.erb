@@ -1,0 +1,7 @@
+<h1 class="text-center"> New Expense Category For <%= @user_category.name %> Category </h1>
+<div class="d-flex">
+  <% form_with model: @expense, url: '/expense_categories' do |form| %>
+        
+    <%# <%= form.label %> %>
+  <% end %>
+</div>
