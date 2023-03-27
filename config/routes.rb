@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   get 'expenses', to: 'home#expenses'
   get 'incomes', to: 'home#incomes'
   get 'calendar_view', to: 'home#calendar'
-  resources :categories
-  resources :transactions
+  resources :categories do
+    resources :transactions
+    resources :expense_categories
+  end
+
+  get '/expense_categories', to: 'expense_categories#index'
 end
